@@ -5,5 +5,5 @@ TLd = 'us'
 
 def convert_to_sound(text : str):
     tts = gTTS(text, lang= language, tld=TLd)
-    sounde = 'sound.ogg'
-    tts.save(sounde)
+    sound = 'sound.ogg'
+    tts.save(sound)
