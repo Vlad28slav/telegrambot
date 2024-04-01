@@ -4,8 +4,13 @@ from maim import convert_to_sound
 from pathlib import Path
 from urllib.request import Request
 from sqlalchemy import true
-from zmq import CONNECT_TIMEOUT 
-from token.env import Token
+from zmq import CONNECT_TIMEOUT
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+Token = os.getenv("Token")
+
 
 def changer_of_lang():
     pass
