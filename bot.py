@@ -9,8 +9,10 @@ Token = os.getenv("Token")
 bot= telebot.TeleBot(Token)
 
 
-language = None
-tld = None
+
+
+language = "en"
+tld = "com.au"
 
 @bot.message_handler(commands=['greet'])
 def greet(message):
@@ -29,24 +31,20 @@ def change_language(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_handler(call):
+    global language, tld
 
     if call.data == "Australia":
-        global language, tld
         language = "en"
         tld ="com.au"
         bot.send_message(call.message.chat.id, "You changed language to English (Australia)")
 
     if call.data == "United States":
-        global language, tld
         language = "en"
         tld ="us"
         bot.send_message(call.message.chat.id, "You changed language to English (United States)")
 
 
 
-
-language == "en"
-tld == "com.au"
 
 @bot.message_handler(func=lambda message: True)
 def convert_and_reply(message):
