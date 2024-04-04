@@ -32,21 +32,21 @@ def callback_handler(call):
 
     if call.data == "Australia":
         global language, tld
-        language == "en"
-        tld =="com.au"
+        language = "en"
+        tld ="com.au"
         bot.send_message(call.message.chat.id, "You changed language to English (Australia)")
 
     if call.data == "United States":
         global language, tld
-        language == "en"
-        tld =="us"
+        language = "en"
+        tld ="us"
         bot.send_message(call.message.chat.id, "You changed language to English (United States)")
 
 
 
 
 language == "en"
-tld == "us"
+tld == "com.au"
 
 @bot.message_handler(func=lambda message: True)
 def convert_and_reply(message):
